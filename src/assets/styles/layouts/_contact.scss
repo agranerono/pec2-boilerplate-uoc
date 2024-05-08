@@ -1,0 +1,57 @@
+@layer base {
+    .contact-container {
+        @include container;
+
+        padding: $spacing-large;
+    }
+}
+
+@layer components {
+    .contact-title {
+        margin-bottom: $spacing-base;
+        text-align: center;
+
+        @include font-weight-bold;
+    }
+
+    .contact-form {
+        @include shadow-sm;
+
+        padding: $spacing-base;
+        background-color: $color-light-gray;
+        border-radius: $card-border-radius;
+        margin-bottom: $spacing-base;
+
+        .form-group {
+            margin-bottom: $spacing-base;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            margin-top: $spacing-base;
+            display: block;
+            margin-bottom: $spacing-base;
+        }
+    }
+    
+    .text-center {
+        font-size: 3vmin; 
+        color: color(display-p3 0.1 0.2 0.3); 
+        text-align: center;
+        padding: $spacing-base;
+        background-color: $color-light-gray;
+        border-left: 4px solid $color-secondary;
+        margin: 0 3vmin; 
+        padding-left: $spacing-base;
+    }
+}
+
+@layer utilities {
+    .p3-color {
+        color: $color-secondary;
+        
+        @supports (color: color(display-p3 0 0 0)) {
+            color: color(display-p3 0.1 0.5 0.3);
+        }    
+    }
+}

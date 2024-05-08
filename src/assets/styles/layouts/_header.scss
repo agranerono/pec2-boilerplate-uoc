@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-base;
+  background-color: $color-primary;
+  position: relative;
+  z-index: 1;
+  color: $color-white;
+  font-size: $font-size-base;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 0.9rem;
+    
+    .fa, .fas, .far, .fab {
+      display: none;
+    } 
+  }
+
+  @include shadow-sm; 
+
+  &__logo {
+    height: 50px;
+  }
+
+  &__nav a {
+    color: $color-white;
+    text-decoration: none;
+    margin-left: $spacing-base;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken($color-white, 10%); 
+    }
+  }
+}

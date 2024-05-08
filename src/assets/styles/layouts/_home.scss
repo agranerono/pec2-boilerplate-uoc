@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $font-size-base;
+  background-color: $color-background;
+  color: $color-black;
+}
+
+.main-poster {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-image: url('/src/assets/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  container-type: inline-size; 
+  padding: $spacing-base;
+
+  .header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $color-dark-gray; 
+  }
+  
+  &__title {
+    font-size: $font-size-large;
+    color: $color-white;
+    margin: 2rem;
+
+    @include font-weight-bold; 
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $color-white;
+    margin: 2rem;
+
+    @include lead();
+  }
+
+  &__logo{        
+    width: 50%;
+    margin: 5rem;
+    display: block;
+    height: auto;
+  }
+
+  @container (min-width: 45rem) {
+    .main-poster__title {
+      font-size: $font-size-large;
+    }
+    
+    .main-poster__subtitle {
+      font-size: $font-size-medium;
+    }
+  }
+  
+  @container (max-width: 44.99rem) {
+    .main-poster__title {
+      font-size: $font-size-medium;
+      margin: $spacing-base;
+    }
+    
+    .main-poster__subtitle {
+      font-size: $font-size-base;
+      margin: $spacing-base;
+    }
+
+    .main-poster__logo{
+      margin:5rem 0 0;
+    }
+  }
+
+  .custom-btn {
+  margin-bottom: $spacing-large;
+
+  }
+}
+
+h1{
+  color: $color-secondary;
+  
+  @include font-weight-bold;
+}
+
+@supports not (display: grid) {
+  .main-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-large;
+  }
+}

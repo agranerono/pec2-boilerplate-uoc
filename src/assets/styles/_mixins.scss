@@ -1,0 +1,19 @@
+@mixin shadow-sm {
+  box-shadow: 0 5px 5px rgb(0 0 0 / 50%);
+}
+  
+@mixin font-weight-bold {
+  font-weight: bold;
+}
+  
+@mixin lead {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+@mixin container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 15px;
+}
+  

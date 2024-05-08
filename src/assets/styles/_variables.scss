@@ -1,0 +1,36 @@
+@use "sass:color";
+
+$font-stack: 'Helvetica Neue', helvetica, arial, sans-serif;
+
+$font-size-base: 1rem; 
+$font-size-large: 3rem;
+$font-size-medium: 1.5rem;
+
+$color-primary: #34495E;
+$color-secondary: #16A085;
+$theme-colors: (
+  "primary": #1A252F,
+);
+
+$color-white: #fff;
+$color-light-gray: #efefef; 
+$color-background: #f8f9fa; 
+$color-dark-gray: rgb(0 0 0 / 50%);
+$color-black: #343a40;
+
+$primary-color: #14b163; 
+$card-cap-bg: $primary-color; 
+$card-bg: color.adjust($color-light-gray); 
+$card-border-width: 2px;  
+$card-border-color: color.adjust($primary-color, $lightness: -15%); 
+$card-border-radius: 0.5rem; 
+$card-spacer-y: 1rem;  
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+
+$spacing-base: 1rem;
+$spacing-large: 2rem;
+
+$breakpoint-md: 512px;
+$breakpoint-lg: 720px;
+
+$box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);

@@ -1,0 +1,80 @@
+@layer base {
+    .participants {
+        container-type: inline-size;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+  }
+  
+  @layer components {
+    .participants__title {
+        text-align: center;
+        padding-top: $spacing-large;
+        padding-bottom: $spacing-large;
+        color: $color-primary;
+
+        @include font-weight-bold;
+    }
+  
+    .participants__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: $spacing-base;
+  
+        @container (min-width: 60rem) {
+            .participant {
+                flex: 0 1 30%;
+            }
+        }
+  
+        @container (min-width: 40rem) and (max-width: 59.99rem) {
+            .participant {
+                flex: 0 1 48%;
+            }
+        }
+  
+        @container (max-width: 39.99rem) {
+            .participant {
+                flex: 0 1 100%;
+                margin: $spacing-base;
+            }
+        }
+    }
+  }
+  
+  @layer utilities {
+    .participant {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: $spacing-base;
+        background-color: $color-light-gray;
+        margin-bottom: $spacing-large;
+  
+        &__image {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+  
+        &__name {
+            font-size: $font-size-medium;
+            color: $color-secondary;
+            margin-top: $spacing-base;
+        }
+  
+        &__description {
+            font-size: $font-size-base;
+            text-align: center;
+            margin: $spacing-base 0;
+            color: $color-black;
+        }
+    }
+  }
+  

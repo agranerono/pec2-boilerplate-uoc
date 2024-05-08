@@ -1,0 +1,51 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "rules": {
+    "block-no-empty": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "function-no-unknown": null,
+    "media-query-no-invalid": null,
+    "import-notation": null,
+    "selector-class-pattern": [
+      "^[a-z0-9\\-]+(__[a-z0-9\\-]+)?(--[a-z0-9\\-]+){0,2}$",
+      {
+        "message": "Expected class selector to follow BEM convention"
+      }
+    ],
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-order": [],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "composes"
+        ]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ],
+    "max-nesting-depth": 3,
+    "no-descending-specificity": null,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute", "class", "id"]
+      }
+    ]
+  }
+}
